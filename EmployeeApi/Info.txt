@@ -1,0 +1,8 @@
+﻿Basit anlamda Employee bilgileri üzerinde işlemler yapacak API(Application Program Interface)
+
+1 - API içersinde VT ile ilgili işlemler olacağı için gerekli Nuget paketlerini dahil ediyoruz.
+
+2 - Boş bir VT yaratalım
+
+3 - Code First yapısını kullanarak modelimizi yaratalım
+
