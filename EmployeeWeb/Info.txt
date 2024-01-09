@@ -1,0 +1,12 @@
+﻿Basit anlamda Employee bilgileri üzerinde işlemler yapacak MVC Uygulaması
+
+1 - Öncelikle appsettings.json içerisine hangi API uygulamasını kullanağımı belirtiyorum
+
+2 - API kullanımı Service mantığı altında kullanılacaktır. Bunun için gerekli deği yapılacak.
+
+3 - 
+
+4 - 
+
+5 - 
+
