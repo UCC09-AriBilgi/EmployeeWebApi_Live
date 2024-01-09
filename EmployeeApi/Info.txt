@@ -6,3 +6,7 @@
 
 3 - Code First yapısını kullanarak modelimizi yaratalım
 
+4 - Program.cs ayarlamaları.
+
+5 - Bir tane Controller yazalım ki sistem ayağa kalksın
+
