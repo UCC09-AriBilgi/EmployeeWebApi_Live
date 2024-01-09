@@ -42,10 +42,17 @@ namespace EmployeeApi.Controllers
 
         }
 
+        // 3. Employee tablosu üzerinde yeni bir kayıt işlemi
         // POST api/<EmployeeEFController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<List<Employee>>> AddEmployee(Employee employee)
         {
+            _context.Employees.Add(employee);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(await _context.Employees.ToListAsync());
+
         }
 
         // PUT api/<EmployeeEFController>/5
