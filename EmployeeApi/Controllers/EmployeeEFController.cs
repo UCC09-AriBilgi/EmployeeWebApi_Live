@@ -78,10 +78,25 @@ namespace EmployeeApi.Controllers
 
         }
 
+        // 5. Employee tablosu üzerinde delete işlemi
         // DELETE api/<EmployeeEFController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id}")] // HttpDelete annotate ve bir id bilgisine ihtiyaç var..
+        public async Task<ActionResult<List<Employee>>> DeleteEmployee(int id) 
         {
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return BadRequest("Böyle bir çalışanınız yoktur...Atma...");
+
+            }
+
+            _context.Employees.Remove(employee);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(await _context.Employees.ToListAsync());
+
         }
     }
 }
