@@ -26,12 +26,20 @@ namespace EmployeeApi.Controllers
             return Ok(await _context.Employees.ToListAsync());
         }
 
-
+        // 2. Employee kayıtlarından Id si belirlenmiş kayıdı getirme
         // GET api/<EmployeeEFController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}")] // Yine HttpGet annotate i kullanarak ve buna bir parametre (id) geçişi yapılarak sadece istenen kaydın getirilmesi
+        public async Task<ActionResult<Employee>> GetEmployeeById(int id)
         {
-            return "value";
+            var employee = await _context.Employees.FindAsync(id); // üzerine gelen id bilgisine göre Find işlemi
+
+            if (employee == null) // eğer employee içeriği oluşmamışsa
+            {
+                return BadRequest("Çalışan kaydı bulunamadı....");
+            }
+
+            return Ok(employee); // 200 kodu-başarılı 
+
         }
 
         // POST api/<EmployeeEFController>
