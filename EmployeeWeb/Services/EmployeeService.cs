@@ -14,7 +14,7 @@ namespace EmployeeWeb.Services
         public EmployeeService(HttpClient client,IConfiguration configuration)
         {
             _client = client;
-            _Apibase = configuration["APISection:BaseAddress"]; // appsettings.json dan gelen bilgiler
+            _Apibase = configuration["APISection:BaseAddress"]; // appsettings.json dan gelen bilgiler https://localhost:1870/
         }
 
         public async Task<IEnumerable<Employee>> GetAll()
@@ -27,9 +27,13 @@ namespace EmployeeWeb.Services
             return await response.ReadContentAsync<List<Employee>>(); // karsı taraftan gelen bilgiyi okuyacak metot.******
         }
 
-        public Task<Employee> GetById(int id)
+        public async Task<Employee> GetById(int id)
         {
-            throw new NotImplementedException();
+            string ApiPath=_Apibase + "api/EmployeeEF/" + id; // gelen id bilgisi API tarafına gönderilecek.
+
+            var response = await _client.GetAsync(ApiPath); // artık gidecği int adresi öğrendiği için oradaki GetAsync metoduna gidecek
+
+            return await response.ReadContentAsync<Employee>();
         }
     }
 }
