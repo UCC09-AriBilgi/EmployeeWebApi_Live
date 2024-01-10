@@ -13,7 +13,7 @@ namespace EmployeeWeb.Helpers
             // Bana API tarafından gönderilen response(cevap) uygun durumda mı
             if (response.IsSuccessStatusCode == false)
             {
-                throw new ApplicationException($"API çağrılırken problem : {response.Content}"); // ?? response.ReasonPhrase
+                throw new ApplicationException($"API çağrılırken problem : {response.ReasonPhrase}"); // ?? response.ReasonPhrase
             }
 
             // eğer durum uygunsa

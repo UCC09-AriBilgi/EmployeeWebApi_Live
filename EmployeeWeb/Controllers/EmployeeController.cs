@@ -1,6 +1,9 @@
 ﻿using EmployeeWeb.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
+using System.Text.Json;
+using Employee = EmployeeWeb.Models.Employee;
+
 
 namespace EmployeeWeb.Controllers
 {
@@ -15,8 +18,8 @@ namespace EmployeeWeb.Controllers
         public EmployeeController(IEmployeeService service , IConfiguration configuration, IWebHostEnvironment environment)
         {
             _service = service;
-            _environmet = environment;
             _ApiBase = configuration["APISection:BaseAddress"];
+            _environmet = environment;
                 
         }
 

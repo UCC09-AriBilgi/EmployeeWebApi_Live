@@ -1,3 +1,4 @@
+using EmployeeWeb.Services;
 using EmployeeWeb.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //  Burasý için yazýlan service moduluru register etmek gerekiyor
-builder.Services.AddHttpClient<IEmployeeService, IEmployeeService>(s => s.BaseAddress = new Uri("https://localhost:7087"));
+builder.Services.AddHttpClient<IEmployeeService, EmployeeService>(s => s.BaseAddress = new Uri("https://localhost:7087")); // ???? Multiple constructor verdi...dikkat yani IEmployeeService interfacini yanlýþlýkla tekrar kendi üzerine yerleþtirmeye çalýþmýsýz.
 
 var app = builder.Build();
 
