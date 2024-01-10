@@ -42,7 +42,7 @@
 
 </table>
 @* Sayfalama için *@
-@Html.PagedListPager((IPagedList)Model,page => Url.Action("Index"),
+@Html.PagedListPager((IPagedList)Model,page => Url.Action("Index",new{page}),
 new PagedListRenderOptions
 {
     DisplayLinkToIndividualPages=true,
