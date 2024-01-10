@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeApi", "EmployeeApi\EmployeeApi.csproj", "{61A95C6D-4424-425A-A3E2-EB713C23E81A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeApi", "EmployeeApi\EmployeeApi.csproj", "{61A95C6D-4424-425A-A3E2-EB713C23E81A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeWeb", "EmployeeWeb\EmployeeWeb.csproj", "{4DD6BF71-AA37-466B-9ECE-4052A5F2CBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeWeb", "EmployeeWeb\EmployeeWeb.csproj", "{4DD6BF71-AA37-466B-9ECE-4052A5F2CBD5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61A95C6D-4424-425A-A3E2-EB713C23E81A} = {61A95C6D-4424-425A-A3E2-EB713C23E81A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
