@@ -41,4 +41,18 @@
     </tbody>
 
 </table>
+@* Sayfalama için *@
+@Html.PagedListPager((IPagedList)Model,page => Url.Action("Index"),
+new PagedListRenderOptions
+{
+    DisplayLinkToIndividualPages=true,
+    DisplayPageCountAndCurrentLocation=false,
+    MaximumPageNumbersToDisplay=10,
+    LiElementClasses=new string[] { "page-item"},
+    PageClasses=new string[] { "page-link"}
+
+})
+<a asp-controller="Employee" asp-action="Create" class="btn btn-success">
+    <i class="bi bi-plus-circle"></i> Ekle
+</a>
 
