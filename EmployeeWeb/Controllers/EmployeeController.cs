@@ -127,7 +127,23 @@ namespace EmployeeWeb.Controllers
         }
 
         //Delete Post
-        [HttpPost]
-        public async Task<IActionResult>
+        [HttpPost,ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7087/EmployeeEF");
+
+                var deleteResult = client.DeleteAsync("api/EmployeeEF/" + id).Result;
+
+                if (deleteResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+
+                }
+            }
+
+            return View();
+        }
     }
 }
