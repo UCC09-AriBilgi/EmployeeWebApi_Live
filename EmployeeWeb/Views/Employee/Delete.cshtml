@@ -1,0 +1,48 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Personel Silme Onay";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Personel bilgisini silmek istediğinize emin misiniz? (@Model.FName @Model.LName)</h1>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <form action="Delete">
+                <div class="form-group">
+                    <label asp-for="FName" class="control-label"></label>
+                    <input asp-for="FName" class="form-control" readonly />
+                    <span asp-validation-for="FName" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2">
+                    <label asp-for="LName" class="control-label"></label>
+                    <input asp-for="LName" class="form-control" readonly />
+                    <span asp-validation-for="LName" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" readonly />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Onay" class="btn btn-danger float-end" />
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
